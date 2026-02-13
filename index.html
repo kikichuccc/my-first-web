@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 京神之旅 | 旅遊小助手</title>
+    <style>
+        :root { --bg-color: #fcfaf2; --card-bg: #ffffff; --primary: #5d5d5d; --accent: #d35400; --food-tag: #e67e22; --buy-tag: #27ae60; --transport-tag: #2980b9; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background: var(--bg-color); color: var(--primary); margin: 0; padding: 15px; line-height: 1.6; }
+        .tab-bar { display: flex; justify-content: space-around; background: white; padding: 10px; position: sticky; top: 0; z-index: 100; border-radius: 0 0 15px 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); margin: -15px -15px 20px -15px; }
+        .tab-btn { font-size: 14px; color: var(--primary); text-decoration: none; font-weight: bold; }
+        .day-header { font-size: 14px; color: #888; margin-top: 20px; display: flex; justify-content: space-between; align-items: center; }
+        .weather { font-size: 13px; color: #5a9; }
+        h1 { font-size: 22px; text-align: center; margin: 20px 0; letter-spacing: 2px; }
+        h2 { font-size: 18px; margin: 5px 0 15px 0; border-left: 4px solid var(--accent); padding-left: 10px; }
+        .card { background: var(--card-bg); border-radius: 12px; padding: 15px; margin-bottom: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); position: relative; }
+        .type-tag { position: absolute; top: 15px; right: 15px; font-size: 11px; padding: 2px 8px; border-radius: 4px; color: white; }
+        .tag-food { background: var(--food-tag); }
+        .tag-spot { background: var(--primary); }
+        .tag-trans { background: var(--transport-tag); }
+        .highlight { font-weight: bold; color: var(--accent); }
+        .btn-nav { display: inline-block; background: #eee; color: #333; text-decoration: none; padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+        .info-box { background: #f0f0f0; padding: 15px; border-radius: 12px; font-size: 14px; margin-bottom: 20px; }
+        .budget-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+        .budget-table td { padding: 8px 0; border-bottom: 1px solid #eee; }
+        .label { display: inline-block; padding: 1px 5px; border-radius: 3px; font-size: 12px; color: white; margin-right: 5px; }
+    </style>
+</head>
+<body>
+
+    <div class="tab-bar">
+        <a href="#itinerary" class="tab-btn">📅 行程</a>
+        <a href="#info" class="tab-btn">✈️ 資訊</a>
+        <a href="#budget" class="tab-btn">💰 記帳</a>
+    </div>
+
+    <h1 id="itinerary">2026 京神之旅</h1>
+
+    <div class="day-header">
+        <span>2/15 (日) 京都第一天</span>
+        <span class="weather">☀️ 8°C / 2°C</span>
+    </div>
+    <div class="card">
+        <span class="type-tag tag-trans">交通</span>
+        <h2>抵達與入住</h2>
+        <p>搭乘 <b>HARUKA 特急</b> 直達京都車站</p>
+        <p><span class="label tag-food">必吃</span> <b>便利商店美食清單</b></p>
+        <p><span class="label tag-food">必買</span> <b>齒磨殿堂牙膏</b> (藥妝店)</p>
+        <a href="https://www.google.com/maps/search/Kyoto+Station" class="btn-nav">📍 導航至京都車站</a>
+    </div>
+
+    <div class="day-header">
+        <span>2/16 (一) 古城與好物</span>
+        <span class="weather">☀️ 9°C / 3°C</span>
+    </div>
+    <div class="card">
+        <span class="type-tag tag-spot">景點</span>
+        <h2>下鴨神社與鴨川</h2>
+        <p>💡 攻略：前往 <b>河合神社</b> 祈求美貌。</p>
+        <p><span class="label tag-food">必吃</span> <b>出町ふたば 豆餅</b> (排隊名店)</p>
+        <p><span class="label tag-food">必買</span> <b>3COINS 生活小物</b> (擠壓器)</p>
+        <a href="https://www.google.com/maps/search/Shimogamo+Jinja" class="btn-nav">📍 導航至下鴨神社</a>
+    </div>
+
+    <div class="day-header">
+        <span>2/17 (二) 質感穿搭巡禮</span>
+        <span class="weather">☁️ 10°C / 4°C</span>
+    </div>
+    <div class="card">
+        <span class="type-tag tag-spot">景點</span>
+        <h2>二条城 & 四条河原町</h2>
+        <p><span class="label tag-food">必買</span> <b>UNIQLO 燈芯絨短外套</b></p>
+        <p><span class="label tag-food">必買</span> <b>GU 雙面織紋夾克</b></p>
+        <a href="https://www.google.com/maps/search/Nijo+Castle" class="btn-nav">📍 導航至二条城</a>
+    </div>
+
+    <div class="day-header">
+        <span>2/18 (三) 跨越神戶</span>
+        <span class="weather">☀️ 11°C / 5°C</span>
+    </div>
+    <div class="card">
+        <span class="type-tag tag-spot">景點</span>
+        <h2>神戶港與美利堅公園</h2>
+        <p>💡 故事：神戶塔是神戶的地標，夜景非常迷人。</p>
+        <p>下午前往飯店 check-in。</p>
+        <a href="https://www.google.com/maps/search/Kobe+Port+Tower" class="btn-nav">📍 導航至神戶港</a>
+    </div>
+
+    <div class="day-header">
+        <span>2/19 (四) 有馬溫泉之約</span>
+        <span class="weather">☀️ 12°C / 6°C</span>
+    </div>
+    <div class="card">
+        <span class="type-tag tag-spot">景點</span>
+        <h2>有馬溫泉巡禮</h2>
+        <p><span class="label tag-food">必吃</span> <b>碳酸煎餅</b>、<b>金之湯/銀之湯</b></p>
+        <p>💡 攻略：日本最古老溫泉之一，記得預約泡湯。</p>
+        <a href="https://www.google.com/maps/search/Arima+Onsen" class="btn-nav">📍 導航至有馬溫泉</a>
+    </div>
+
+    <div class="day-header">
+        <span>2/20 (五) 賦歸</span>
+        <span class="weather">☁️ 11°C / 5°C</span>
+    </div>
+    <div class="card">
+        <span class="type-tag tag-trans">交通</span>
+        <h2>返回關西機場</h2>
+        <p>整理行李，帶著滿滿回憶回家。</p>
+        <a href="https://www.google.com/maps/search/Kansai+Airport" class="btn-nav">📍 導航至關西機場</a>
+    </div>
+
+    <hr>
+
+    <h2 id="info">✈️ 重要資訊</h2>
+    <div class="info-box">
+        <p>📌 <b>緊急電話：</b> 110 (警察) / 119 (救護)</p>
+        <p>📌 <b>住宿代號：</b> <span class="highlight">#KYOTO-2026-001</span></p>
+        <p>📌 <b>航班：</b> TPE-KIX (2/15) / KIX-TPE (2/20)</p>
+    </div>
+
+    <h2 id="budget">💰 預算表</h2>
+    <div class="card">
+        <table class="budget-table">
+            <tr><td>Day 1 交通美食</td><td>¥ 3,700</td></tr>
+            <tr><td>Day 2 交通購物</td><td>¥ 4,750</td></tr>
+            <tr><td>Day 3 衣服採購</td><td>¥ 12,000</td></tr>
+            <tr><td>Day 5 溫泉行程</td><td>¥ 5,500</td></tr>
+            <tr><td><b>總計估算</b></td><td><b>¥ 25,950</b></td></tr>
+        </table>
+    </div>
+
+</body>
+</html>
