@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>2026 京神之旅</title>
     <style>
-        :root { --bg: #fcfaf2; --card: #ffffff; --primary: #5d5d5d; --accent: #8e9775; --food: #d4a373; --buy: #6b705c; --trans: #548ca8; }
+        :root { --bg: #fcfaf2; --card: #ffffff; --primary: #5d5d5d; --accent: #8e9775; --food: #d4a373; --buy: #6b705c; --trans: #548ca8; --alert: #bc6c25; }
         body { font-family: -apple-system, sans-serif; background: var(--bg); color: var(--primary); margin: 0; padding-top: 60px; }
         
         /* Tab Navigation */
@@ -18,8 +18,8 @@
         /* Accordion Cards */
         .card { background: var(--card); border-radius: 15px; margin-bottom: 15px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.03); }
         .card-header { padding: 15px; background: #fff; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #f9f9f9; }
-        .card-title { font-weight: bold; font-size: 16px; }
-        .card-body { padding: 15px; display: none; } /* Default Hidden */
+        .card-title { font-weight: bold; font-size: 16px; line-height: 1.4; }
+        .card-body { padding: 15px; display: none; }
         .card.open .card-body { display: block; }
         
         /* Location & Time */
@@ -36,11 +36,12 @@
         .tag-trans { background: var(--trans); }
         .tag-food { background: var(--food); }
         .tag-buy { background: var(--buy); }
-        .btn-nav { display: inline-block; padding: 5px 12px; font-size: 12px; color: var(--accent); border: 1px solid var(--accent); border-radius: 20px; text-decoration: none; margin-top: 5px; }
-        .trans-text { font-size: 12px; color: #777; margin-bottom: 8px; display: block; }
+        .btn-nav { display: inline-block; padding: 6px 14px; font-size: 12px; color: var(--accent); border: 1px solid var(--accent); border-radius: 20px; text-decoration: none; margin-top: 8px; font-weight: 500; }
+        .btn-link { display: block; text-align: center; background: var(--alert); color: white; padding: 10px; border-radius: 8px; text-decoration: none; margin: 10px 0; font-size: 14px; }
+        .trans-text { font-size: 12px; color: #777; margin-bottom: 8px; display: block; line-height: 1.5; }
         
         .weather { font-size: 12px; color: #5a9; font-weight: normal; }
-        .highlight { font-weight: bold; color: #bc6c25; }
+        .highlight { font-weight: bold; color: var(--alert); }
     </style>
 </head>
 <body>
@@ -52,29 +53,43 @@
 
     <div id="itinerary" class="tab-content active">
         
+        <div class="card" style="border: 1px dashed var(--alert);">
+            <div class="card-header" onclick="toggleCard(this.parentElement)">
+                <div class="card-title highlight">🚨 2/14 (六) 出發前必辦</div>
+                <span>▼</span>
+            </div>
+            <div class="card-body">
+                <p>1. 國泰航空 (CX564) 網上預辦登機</p>
+                <a href="https://www.cathaypacific.com/mb/#!/zh_TW/olci/login" class="btn-link">前往國泰登機</a>
+                <p>2. 申請 Visit Japan Web (VJW)</p>
+                <a href="https://www.vjw.digital.go.jp/main/#/vjwplo001" class="btn-link" style="background: #1a73e8;">前往 VJW 申請</a>
+                <p><small>*完成後請務必截圖 QR Code</small></p>
+            </div>
+        </div>
+
         <div class="card">
             <div class="card-header" onclick="toggleCard(this.parentElement)">
                 <div class="card-title">Day 1: 2/15 (日) 京都抵達 <br><span class="weather">☀️ 8°C 晴</span></div>
                 <span>▼</span>
             </div>
             <div class="card-body">
-                <span class="trans-text"><span class="tag tag-trans">交通</span> 桃園(CX564) → 關西機場 → HARUKA 38號</span>
-                <p>📍 京都八條口飯店 Check-in</p>
+                <span class="trans-text"><span class="tag tag-trans">轉乘</span> 07:00 土城 → 08:00 桃機 → CX564 (11:00起飛) → 14:55 抵達KIX → 16:14 HARUKA 38 號</span>
+                <p>🏨 18:30 京都八條口飯店 Check-in</p>
                 
                 <div class="sub-collapse">
                     <div class="sub-header" onclick="toggleSub(event, this.parentElement)">🍴 建議美食 (市場小路) <span>+</span></div>
                     <div class="sub-body">
-                        <p>與佳錡吃飯：市場小路 - 寺町本店</p>
-                        <div class="loc-info" data-loc="市場小路寺町本店">📍 定位中...</div><br>
-                        <a href="https://www.google.com/maps/dir/?api=1&destination=市場小路+寺町本店" class="btn-nav">開啟導航</a>
+                        <p><b>19:30 市場小路 - 寺町本店</b> (與佳錡吃飯)</p>
+                        <div class="loc-info">📍 步行約 15 分鐘</div><br>
+                        <a href="https://www.google.com/maps/search/?api=1&query=市場小路+寺町本店" class="btn-nav">導航至餐廳</a>
                     </div>
                 </div>
 
                 <div class="sub-collapse">
-                    <div class="sub-header" onclick="toggleSub(event, this.parentElement)">🛒 購物地點 (成城石井) <span>+</span></div>
+                    <div class="sub-header" onclick="toggleSub(event, this.parentElement)">🛒 購物 (超市零食) <span>+</span></div>
                     <div class="sub-body">
-                        <p>車站超市買水果零食</p>
-                        <a href="https://www.google.com/maps/dir/?api=1&destination=成城石井+京都駅" class="btn-nav">開啟導航</a>
+                        <p>京都車站 <b>成城石井</b> 買水果零食</p>
+                        <a href="https://www.google.com/maps/search/?api=1&query=成城石井+京都駅" class="btn-nav">導航至超市</a>
                     </div>
                 </div>
             </div>
@@ -82,27 +97,54 @@
 
         <div class="card">
             <div class="card-header" onclick="toggleCard(this.parentElement)">
-                <div class="card-title">Day 2: 2/16 (一) 伏見與AEON <br><span class="weather">☁️ 9°C 多雲</span></div>
+                <div class="card-title">Day 2: 2/16 (一) 伏見與一站式採買 <br><span class="weather">☁️ 9°C 多雲</span></div>
                 <span>▼</span>
             </div>
             <div class="card-body">
-                <span class="trans-text"><span class="tag tag-trans">交通</span> 飯店 → JR 稻荷站 (約5分) → 返回京都車站</span>
-                <p>⛩️ 伏見稻荷大社 (千本鳥居)</p>
+                <span class="trans-text"><span class="tag tag-trans">轉乘</span> 京都站 → JR 稻荷站 (5分) → 返回京都站</span>
+                <p>⛩️ 10:00 伏見稻荷大社 (千本鳥居/影片拍攝)</p>
                 
                 <div class="sub-collapse">
-                    <div class="sub-header" onclick="toggleSub(event, this.parentElement)">🛒 必逛一站式 (AEON Mall) <span>+</span></div>
+                    <div class="sub-header" onclick="toggleSub(event, this.parentElement)">🛒 購物 (AEON Mall Kyoto) <span>+</span></div>
                     <div class="sub-body">
-                        <p>大創、UNIQLO(燈芯絨外套)、GU、MUJI</p>
-                        <div class="loc-info" data-loc="AEON+Mall+Kyoto">📍 定位中...</div><br>
-                        <a href="https://www.google.com/maps/dir/?api=1&destination=AEON+Mall+Kyoto" class="btn-nav">開啟導航</a>
+                        <p>13:00 一站式購齊：大創、UNIQLO(燈芯絨外套)、GU、MUJI</p>
+                        <div class="loc-info">📍 步行約 5 分鐘</div><br>
+                        <a href="https://www.google.com/maps/search/?api=1&query=AEON+Mall+Kyoto" class="btn-nav">導航至 AEON</a>
                     </div>
                 </div>
 
                 <div class="sub-collapse">
-                    <div class="sub-header" onclick="toggleSub(event, this.parentElement)">🍴 建議美食 (東洋亭) <span>+</span></div>
+                    <div class="sub-header" onclick="toggleSub(event, this.parentElement)">🍴 建議美食 (東洋亭/KOHYO) <span>+</span></div>
                     <div class="sub-body">
-                        <p>AEON 內漢堡排（排隊名店）</p>
-                        <a href="https://www.google.com/maps/dir/?api=1&destination=東洋亭+AEON+Mall" class="btn-nav">開啟導航</a>
+                        <p>AEON 內 <b>東洋亭</b> (漢堡排)；1F 有 <b>KOHYO</b> 超市</p>
+                        <a href="https://www.google.com/maps/search/?api=1&query=東洋亭+AEON+Kyoto" class="btn-nav">導航至東洋亭</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header" onclick="toggleCard(this.parentElement)">
+                <div class="card-title">Day 3: 2/17 (二) 鴨川與四條美妝 <br><span class="weather">☀️ 10°C 晴</span></div>
+                <span>▼</span>
+            </div>
+            <div class="card-body">
+                <span class="trans-text"><span class="tag tag-trans">轉乘</span> 京都市巴士 或 京阪電車 至 出町柳/河原町</span>
+                <p>🌊 上午：鴨川三角洲散步 / 下鴨神社</p>
+                
+                <div class="sub-collapse">
+                    <div class="sub-header" onclick="toggleSub(event, this.parentElement)">🛒 購物 (四條河原町) <span>+</span></div>
+                    <div class="sub-body">
+                        <p>3COINS、LoFt (文具/A醇)、藥妝店 (松本清/大國，買齒磨殿堂牙膏)</p>
+                        <a href="https://www.google.com/maps/search/?api=1&query=四條河原町" class="btn-nav">導航至商圈</a>
+                    </div>
+                </div>
+
+                <div class="sub-collapse">
+                    <div class="sub-header" onclick="toggleSub(event, this.parentElement)">🍴 建議美食 (豬排/美食街) <span>+</span></div>
+                    <div class="sub-body">
+                        <p><b>名代豬排</b> 或 <b>進進堂</b>；高島屋 B1 美食街</p>
+                        <a href="https://www.google.com/maps/search/?api=1&query=名代豬排+四條" class="btn-nav">導航至名代</a>
                     </div>
                 </div>
             </div>
@@ -114,15 +156,62 @@
                 <span>▼</span>
             </div>
             <div class="card-body">
-                <span class="trans-text"><span class="tag tag-trans">交通</span> 京都 (JR新快速) → 三之宮 (50分)</span>
-                <p>🏨 蒙特埃瑪納酒店 Check-in</p>
+                <span class="trans-text"><span class="tag tag-trans">轉乘</span> 10:00 京都站 → JR 新快速 → 神戶三之宮 (50分)</span>
+                <p>🏨 11:30 蒙特埃瑪納酒店寄放行李 (生田神社旁)</p>
+                
                 <div class="sub-collapse">
                     <div class="sub-header" onclick="toggleSub(event, this.parentElement)">🍴 建議美食 (Red Rock) <span>+</span></div>
                     <div class="sub-body">
-                        <p>Red Rock 三宮店 (烤牛肉蓋飯)</p>
-                        <a href="https://www.google.com/maps/dir/?api=1&destination=Red+Rock+三宮店" class="btn-nav">開啟導航</a>
+                        <p>12:00 <b>Red Rock 三宮店</b> (烤牛肉蓋飯)</p>
+                        <div class="loc-info">📍 步行約 8 分鐘</div><br>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Red+Rock+Sannomiya" class="btn-nav">導航至餐廳</a>
                     </div>
                 </div>
+
+                <div class="sub-collapse">
+                    <div class="sub-header" onclick="toggleSub(event, this.parentElement)">🛒 購物 (三宮商圈) <span>+</span></div>
+                    <div class="sub-body">
+                        <p>16:00 三宮中心街、<b>唐吉訶德</b>、Hankyu Oasis 超市</p>
+                        <a href="https://www.google.com/maps/search/?api=1&query=唐吉訶德+三宮" class="btn-nav">導航至唐吉</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header" onclick="toggleCard(this.parentElement)">
+                <div class="card-title">Day 5: 2/19 (四) 有馬溫泉與夜景 <br><span class="weather">☀️ 12°C 晴</span></div>
+                <span>▼</span>
+            </div>
+            <div class="card-body">
+                <span class="trans-text"><span class="tag tag-trans">轉乘</span> 飯店門口巴士 或 地下鐵 前往有馬</span>
+                <p class="highlight">🚨 今日需辦理 CX565 預辦登機</p>
+                <a href="https://www.cathaypacific.com/mb/#!/zh_TW/olci/login" class="btn-link">前往國泰登機</a>
+                
+                <p>♨️ 上午：有馬溫泉 (金之湯/銀之湯)</p>
+                <p>🎡 下午：神戶港 MOSAIC 廣場 (影片拍攝)</p>
+
+                <div class="sub-collapse">
+                    <div class="sub-header" onclick="toggleSub(event, this.parentElement)">🍴 建議美食 (Eggs 'n Things) <span>+</span></div>
+                    <div class="sub-body">
+                        <p><b>Eggs 'n Things</b> (海景鬆餅)</p>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Eggs+n+Things+Kobe" class="btn-nav">導航至餐廳</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header" onclick="toggleCard(this.parentElement)">
+                <div class="card-title">Day 6: 2/20 (五) 最後衝刺與賦歸 <br><span class="weather">☁️ 11°C 多雲</span></div>
+                <span>▼</span>
+            </div>
+            <div class="card-body">
+                <span class="trans-text"><span class="tag tag-trans">轉乘</span> 12:15 三宮站 → 機場巴士 A1 線 (65分) → KIX</span>
+                <p>🛍️ 10:00 飯店退房，三宮周邊藥妝最後掃貨</p>
+                <p>✈️ 16:20 航班 CX565 起飛 → 18:15 抵達桃園</p>
+                
+                <a href="https://www.google.com/maps/search/?api=1&query=三宮站+機場巴士" class="btn-nav">導航至巴士站</a>
             </div>
         </div>
 
@@ -130,37 +219,38 @@
 
     <div id="info" class="tab-content">
         <div class="card">
-            <div class="card-header"><div class="card-title">🎫 航班資訊：去程 (2/15)</div></div>
+            <div class="card-header"><div class="card-title">🎫 航班：去程 (2/15)</div></div>
             <div class="card-body" style="display:block">
                 <p><b>國泰航空 CX564</b></p>
                 <p>11:00 桃園(TPE) → 14:55 關西(KIX)</p>
-                <p class="highlight">🚨 2/14 記得網上預辦登機</p>
+                <a href="https://www.cathaypacific.com/mb/#!/zh_TW/olci/login" class="btn-link">前往預辦登機</a>
             </div>
         </div>
 
         <div class="card">
-            <div class="card-header"><div class="card-title">🏨 住宿資訊：京都 (2/15-2/17)</div></div>
+            <div class="card-header"><div class="card-title">🏨 住宿：京都 (2/15-2/17)</div></div>
             <div class="card-body" style="display:block">
                 <p><b>京都八條口附近飯店</b></p>
                 <p>入住：2/15 | 退房：2/18</p>
-                <a href="https://www.google.com/maps/dir/?api=1&destination=京都八條口" class="btn-nav">飯店導航</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=京都駅八条口" class="btn-nav">飯店地圖</a>
             </div>
         </div>
 
         <div class="card">
-            <div class="card-header"><div class="card-title">🏨 住宿資訊：神戶 (2/18-2/19)</div></div>
+            <div class="card-header"><div class="card-title">🏨 住宿：神戶 (2/18-2/19)</div></div>
             <div class="card-body" style="display:block">
                 <p><b>蒙特埃瑪納酒店 (Hotel Monte Hermana)</b></p>
                 <p>入住：2/18 | 退房：2/20</p>
-                <a href="https://www.google.com/maps/dir/?api=1&destination=Hotel+Monte+Hermana+Kobe" class="btn-nav">飯店導航</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=Hotel+Monte+Hermana+Kobe" class="btn-nav">飯店地圖</a>
             </div>
         </div>
 
         <div class="card">
-            <div class="card-header"><div class="card-title">🎫 航班資訊：回程 (2/20)</div></div>
+            <div class="card-header"><div class="card-title">🎫 航班：回程 (2/20)</div></div>
             <div class="card-body" style="display:block">
                 <p><b>國泰航空 CX565</b></p>
                 <p>16:20 關西(KIX) → 18:15 桃園(TPE)</p>
+                <a href="https://www.cathaypacific.com/mb/#!/zh_TW/olci/login" class="btn-link">前往預辦登機</a>
             </div>
         </div>
     </div>
@@ -174,6 +264,7 @@
             for (i = 0; i < tablinks.length; i++) { tablinks[i].classList.remove("active"); }
             document.getElementById(tabName).classList.add("active");
             evt.currentTarget.classList.add("active");
+            window.scrollTo(0,0);
         }
 
         function toggleCard(el) {
@@ -185,14 +276,11 @@
             el.classList.toggle("open");
         }
 
-        // 定位功能
+        // 定位模擬邏輯
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function(position) {
-                const userLat = position.coords.latitude;
-                const userLon = position.coords.longitude;
                 document.querySelectorAll('.loc-info').forEach(info => {
-                    // 這裡模擬計算時間，實際使用時可串接 Google Distance Matrix API
-                    info.innerHTML = "🚶 走路約 15-20 分鐘 | 🚌 交通約 10 分鐘";
+                    info.innerHTML = "🚶 走路約 5-15 分鐘 | 交通順暢";
                 });
             });
         }
