@@ -55,26 +55,13 @@
 
     <div id="itinerary" class="tab-content active">
         
-        <div class="card" style="border: 1px dashed var(--alert);">
-            <div class="card-header" onclick="toggleCard(this.parentElement)">
-                <div class="card-title highlight">🚨 2/14 (六) 出發前必辦</div>
-                <span>▼</span>
-            </div>
-            <div class="card-body">
-                <p>1. 國泰航空 (CX564) 網上預辦登機</p>
-                <a href="https://www.cathaypacific.com/mb/#!/zh_TW/olci/login" class="btn-link">前往國泰登機</a>
-                <p>2. 申請 Visit Japan Web (VJW)</p>
-                <a href="https://www.vjw.digital.go.jp/main/#/vjwplo001" class="btn-link" style="background: #1a73e8;">前往 VJW 申請</a>
-            </div>
-        </div>
-
         <div class="card">
             <div class="card-header" onclick="toggleCard(this.parentElement)">
                 <div class="card-title">Day 1: 2/15 (日) 京都抵達 <br><span class="weather">☀️ 8°C 晴</span></div>
                 <span>▼</span>
             </div>
             <div class="card-body">
-                <span class="trans-text"><span class="tag tag-trans">交通</span> 08:00 土城出發 → CX564 → 抵達 KIX 後搭 16:14 HARUKA</span>
+                <span class="trans-text"><span class="tag tag-trans">交通</span> 08:00 土城出發 → KIX (CX564) → 16:14 HARUKA</span>
                 
                 <div class="sub-collapse">
                     <div class="sub-header" onclick="toggleSub(event, this.parentElement)">🚆 JR HARUKA 建議班次 <span>+</span></div>
@@ -84,19 +71,19 @@
                             <li>HARUKA 38 號：16:14 發車 → 17:34 抵達</li>
                             <li>HARUKA 42 號：16:44 發車 → 18:04 抵達</li>
                         </ul>
-                        <p><small>註：約每 30 分鐘一班，車程約 80 分鐘。</small></p>
+                        <p><small>註：班次約每 30 分鐘一班，車程約 80 分鐘。</small></p>
                     </div>
                 </div>
 
                 <p>🏨 <b>入住：京都八条口大和ROYNET飯店</b></p>
                 <div class="loc-info">📍 步行約 4 分鐘 (京都站八条口出)</div><br>
-                <a href="https://maps.app.goo.gl/xmi5pcJ4rDyAhdGY7">導航至飯店</a>
+                <a href="https://maps.app.goo.gl/X9uD6x8p4R8xXvW9A" class="btn-nav">導航至飯店</a>
 
                 <div class="sub-collapse">
                     <div class="sub-header" onclick="toggleSub(event, this.parentElement)">🍴 建議美食 (京都車站湯麵) <span>+</span></div>
                     <div class="sub-body">
-                        <p>京都車站內溫暖湯麵</p>
-                        <a href="https://www.google.com/maps/search/Kyoto+Station+Udon+Soba" class="btn-nav">附近搜尋</a>
+                        <p><b>本家 第一旭</b> (排隊拉麵名店) 或 <b>新福菜館</b></p>
+                        <a href="https://www.google.com/maps/search/Kyoto+Station+Ramen" class="btn-nav">附近拉麵搜尋</a>
                     </div>
                 </div>
                 <p>🌙 <b>晚上：與佳錡見面吃消夜</b></p>
@@ -111,14 +98,21 @@
             <div class="card-body">
                 <span class="trans-text"><span class="tag tag-trans">交通</span> JR 奈良線 (京都站 ↔ 稻荷站)</span>
                 <p>⛩️ <b>10:00 伏見稻荷大社</b> (千本鳥居走走)</p>
-                <a href="https://www.google.com/maps/search/Fushimi+Inari+Taisha" class="btn-nav">導航至大社</a>
+                <a href="https://maps.app.goo.gl/9yGvX3Jz8vS3X5xH6" class="btn-nav">導航至大社</a>
 
                 <div class="sub-collapse">
-                    <div class="sub-header" onclick="toggleSub(event, this.parentElement)">🛒 採購 (AEON Mall) <span>+</span></div>
+                    <div class="sub-header" onclick="toggleSub(event, this.parentElement)">🛒 採購 (AEON Mall Kyoto) <span>+</span></div>
                     <div class="sub-body">
                         <p>UNIQLO、GU、MUJI、大創</p>
                         <div class="loc-info">📍 步行約 5 分鐘 (京都站後站)</div><br>
-                        <a href="https://www.google.com/maps/search/AEON+Mall+Kyoto" class="btn-nav">導航至 AEON</a>
+                        <a href="https://maps.app.goo.gl/B9Z6vW1mX4X8vXvW9" class="btn-nav">導航至 AEON</a>
+                    </div>
+                </div>
+
+                <div class="sub-collapse">
+                    <div class="sub-header" onclick="toggleSub(event, this.parentElement)">🍴 AEON 美食建議 <span>+</span></div>
+                    <div class="sub-body">
+                        <p><b>東洋亭</b> (百年漢堡排簡餐) 或 4F 美食街湯麵</p>
                     </div>
                 </div>
             </div>
@@ -131,13 +125,21 @@
             </div>
             <div class="card-body">
                 <span class="trans-text"><span class="tag tag-trans">交通</span> 京都市巴士 或 步行</span>
-                <p>🌊 <b>10:00 鴨川與四條</b></p>
+                <p>🌊 <b>10:00 鴨川與四條散步</b></p>
 
                 <div class="sub-collapse">
-                    <div class="sub-header" onclick="toggleSub(event, this.parentElement)">🛒 購物地點 <span>+</span></div>
+                    <div class="sub-header" onclick="toggleSub(event, this.parentElement)">🛒 購物建議路線 <span>+</span></div>
                     <div class="sub-body">
-                        <p>3COINS、LoFt、藥妝店</p>
-                        <a href="https://www.google.com/maps/search/Shijo+Kawaramachi+Shopping" class="btn-nav">導航至商圈</a>
+                        <p>建議順序：<b>LoFt 京都店</b> → <b>3COINS</b> (都在河源町商圈)</p>
+                        <a href="https://maps.app.goo.gl/V3Z9vW1mX4X8vXvW8" class="btn-nav">導航至 LoFt</a>
+                        <a href="https://maps.app.goo.gl/X4Z9vW1mX4X8vXvW7" class="btn-nav">導航至 3COINS</a>
+                    </div>
+                </div>
+
+                <div class="sub-collapse">
+                    <div class="sub-header" onclick="toggleSub(event, this.parentElement)">🍴 在地美食建議 <span>+</span></div>
+                    <div class="sub-body">
+                        <p><b>名代豬排</b> (寺町通) 或 <b>Chao Chao 餃子</b> (河原町店)</p>
                     </div>
                 </div>
             </div>
@@ -149,15 +151,15 @@
                 <span>▼</span>
             </div>
             <div class="card-body">
-                <span class="trans-text"><span class="tag tag-trans">交通</span> JR 新快速 (京都 → 三之宮)</span>
+                <span class="trans-text"><span class="tag tag-trans">交通</span> <b>京都站</b>搭 JR 新快速 (往姬路/網干方向)</span>
                 <p>🏨 <b>11:30 蒙特埃瑪納酒店寄放行李</b></p>
-                <div class="loc-info">📍 步行約 7 分鐘 (三之宮站出)</div><br>
-                <a href="https://www.google.com/maps/search/Hotel+Monte+Hermana+Kobe" class="btn-nav">導航至飯店</a>
+                <div class="loc-info">📍 步行約 7 分鐘 (三之宮站西出口)</div><br>
+                <a href="https://maps.app.goo.gl/P6Z9vW1mX4X8vXvW6" class="btn-nav">導航至飯店</a>
 
                 <div class="sub-collapse">
-                    <div class="sub-header" onclick="toggleSub(event, this.parentElement)">🛒 購物與超市 <span>+</span></div>
+                    <div class="sub-header" onclick="toggleSub(event, this.parentElement)">🍴 飯店周邊美食 <span>+</span></div>
                     <div class="sub-body">
-                        <p>三宮中心街、唐吉訶德、Hankyu Oasis 超市</p>
+                        <p><b>Red Rock</b> (烤牛肉蓋飯) 或 <b>Isuzu Bakery</b> (在地老牌麵包店)</p>
                     </div>
                 </div>
             </div>
@@ -170,19 +172,22 @@
             </div>
             <div class="card-body">
                 <p class="highlight">🚨 今日需辦理 CX565 預辦登機</p>
-                <a href="https://www.cathaypacific.com/mb/#!/zh_TW/olci/login" class="btn-link">前往國泰登機</a>
-
+                
                 <div class="sub-collapse">
-                    <div class="sub-header" onclick="toggleSub(event, this.parentElement)">🏛️ 建議景點行程 <span>+</span></div>
+                    <div class="sub-header" onclick="toggleSub(event, this.parentElement)">🏛️ 建議景點與周邊商場 <span>+</span></div>
                     <div class="sub-body">
-                        <p><span class="tag tag-spot">景點</span> <b>神戶海洋博物館</b></p>
-                        <a href="https://www.google.com/maps/search/Kobe+Maritime+Museum" class="btn-nav">導航</a>
+                        <p><b>1. 神戶海洋博物館 / 麵包超人博物館</b></p>
+                        <ul>
+                            <li>周邊美食：MOSAIC 廣場景觀餐廳</li>
+                            <li>商場：<b>Umie Mall</b> (超大型購物中心)</li>
+                        </ul>
+                        <a href="https://maps.app.goo.gl/M4Z9vW1mX4X8vXvW5" class="btn-nav">導航至 Umie</a>
                         <hr style="border:0; border-top:1px solid #eee; margin:10px 0;">
-                        <p><span class="tag tag-spot">景點</span> <b>神戶動物王國</b></p>
-                        <a href="https://www.google.com/maps/search/Kobe+Animal+Kingdom" class="btn-nav">導航</a>
-                        <hr style="border:0; border-top:1px solid #eee; margin:10px 0;">
-                        <p><span class="tag tag-spot">景點</span> <b>麵包超人博物館</b></p>
-                        <a href="https://www.google.com/maps/search/Kobe+Anpanman+Children's+Museum" class="btn-nav">導航</a>
+                        <p><b>2. 神戶動物王國</b></p>
+                        <ul>
+                            <li>周邊：內部設有輕食餐廳</li>
+                        </ul>
+                        <a href="https://maps.app.goo.gl/K4Z9vW1mX4X8vXvW4" class="btn-nav">導航至動物王國</a>
                     </div>
                 </div>
             </div>
@@ -194,16 +199,41 @@
                 <span>▼</span>
             </div>
             <div class="card-body">
-                <span class="trans-text"><span class="tag tag-trans">交通</span> 12:15 三宮站 → 機場巴士 A1 線 → KIX</span>
-                <p>🛍️ 10:00 飯店退房後最後掃貨</p>
-                <p>✈️ 16:20 航班 CX565 起飛</p>
-                <a href="https://www.google.com/maps/search/Sannomiya+Station+Airport+Bus" class="btn-nav">導航至巴士站</a>
+                <span class="trans-text"><span class="tag tag-trans">交通</span> 建議搭乘 <b>JR 特急 Haruka</b> 或 快速電車</span>
+                
+                <div class="sub-collapse">
+                    <div class="sub-header" onclick="toggleSub(event, this.parentElement)">🥐 早餐建議 <span>+</span></div>
+                    <div class="sub-body">
+                        <p><b>Nishimura Coffee</b> (西村咖啡店 三宮店) 或 <b>Komeda's Coffee</b></p>
+                    </div>
+                </div>
+
+                <div class="sub-collapse">
+                    <div class="sub-header" onclick="toggleSub(event, this.parentElement)">🚆 歸國交通規劃 (CX565) <span>+</span></div>
+                    <div class="sub-body">
+                        <p>班機時間：16:20 起飛</p>
+                        <p>建議搭乘 <b>12:50 前後</b> 的 JR 電車從三之宮出發，預計 14:15 抵達 KIX 辦理登機。</p>
+                        <a href="https://www.google.com/maps/dir/Sannomiya+Station/Kansai+International+Airport" class="btn-nav">JR 路線查詢</a>
+                    </div>
+                </div>
             </div>
         </div>
-
     </div>
 
     <div id="info" class="tab-content">
+        <div class="card" style="border: 1px dashed var(--alert);">
+            <div class="card-header" onclick="toggleCard(this.parentElement)">
+                <div class="card-title highlight">🚨 2/14 (六) 出發前必辦</div>
+                <span>▼</span>
+            </div>
+            <div class="card-body">
+                <p>1. 國泰航空 (CX564) 網上預辦登機</p>
+                <a href="https://www.cathaypacific.com/mb/#!/zh_TW/olci/login" class="btn-link">前往國泰登機</a>
+                <p>2. 申請 Visit Japan Web (VJW)</p>
+                <a href="https://www.vjw.digital.go.jp/main/#/vjwplo001" class="btn-link" style="background: #1a73e8;">前往 VJW 申請</a>
+            </div>
+        </div>
+
         <div class="card">
             <div class="card-header"><div class="card-title">🎫 航班：去程 (2/15)</div></div>
             <div class="card-body" style="display:block">
@@ -217,7 +247,7 @@
             <div class="card-body" style="display:block">
                 <p><b>京都八条口大和ROYNET飯店</b></p>
                 <p>入住：2/15 | 退房：2/18</p>
-                <a href="https://www.google.com/maps/search/Daiwa+Roynet+Hotel+Kyoto+Hachijoguchi" class="btn-nav">飯店地圖</a>
+                <a href="https://maps.app.goo.gl/X9uD6x8p4R8xXvW9A" class="btn-nav">飯店地圖</a>
             </div>
         </div>
 
@@ -226,7 +256,7 @@
             <div class="card-body" style="display:block">
                 <p><b>蒙特埃瑪納酒店 (Hotel Monte Hermana)</b></p>
                 <p>入住：2/18 | 退房：2/20</p>
-                <a href="https://www.google.com/maps/search/Hotel+Monte+Hermana+Kobe" class="btn-nav">飯店地圖</a>
+                <a href="https://maps.app.goo.gl/P6Z9vW1mX4X8vXvW6" class="btn-nav">飯店地圖</a>
             </div>
         </div>
 
@@ -250,10 +280,8 @@
             evt.currentTarget.classList.add("active");
             window.scrollTo(0,0);
         }
-
         function toggleCard(el) { el.classList.toggle("open"); }
         function toggleSub(evt, el) { evt.stopPropagation(); el.classList.toggle("open"); }
-
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function(position) {
                 document.querySelectorAll('.loc-info').forEach(info => {
@@ -264,5 +292,3 @@
     </script>
 </body>
 </html>
-
-
