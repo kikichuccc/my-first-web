@@ -2,132 +2,109 @@
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2026 京神之旅 | 旅遊小助手</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>2026 京神 | 旅程助手</title>
     <style>
-        :root { --bg-color: #fcfaf2; --card-bg: #ffffff; --primary: #5d5d5d; --accent: #d35400; --food-tag: #e67e22; --buy-tag: #27ae60; --transport-tag: #2980b9; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background: var(--bg-color); color: var(--primary); margin: 0; padding: 15px; line-height: 1.6; }
-        .tab-bar { display: flex; justify-content: space-around; background: white; padding: 10px; position: sticky; top: 0; z-index: 100; border-radius: 0 0 15px 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); margin: -15px -15px 20px -15px; }
-        .tab-btn { font-size: 14px; color: var(--primary); text-decoration: none; font-weight: bold; }
-        .day-header { font-size: 14px; color: #888; margin-top: 20px; display: flex; justify-content: space-between; align-items: center; }
-        .weather { font-size: 13px; color: #5a9; }
-        h1 { font-size: 22px; text-align: center; margin: 20px 0; letter-spacing: 2px; }
-        h2 { font-size: 18px; margin: 5px 0 15px 0; border-left: 4px solid var(--accent); padding-left: 10px; }
-        .card { background: var(--card-bg); border-radius: 12px; padding: 15px; margin-bottom: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); position: relative; }
-        .type-tag { position: absolute; top: 15px; right: 15px; font-size: 11px; padding: 2px 8px; border-radius: 4px; color: white; }
-        .tag-food { background: var(--food-tag); }
-        .tag-spot { background: var(--primary); }
-        .tag-trans { background: var(--transport-tag); }
-        .highlight { font-weight: bold; color: var(--accent); }
-        .btn-nav { display: inline-block; background: #eee; color: #333; text-decoration: none; padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
-        .info-box { background: #f0f0f0; padding: 15px; border-radius: 12px; font-size: 14px; margin-bottom: 20px; }
-        .budget-table { width: 100%; border-collapse: collapse; font-size: 14px; }
-        .budget-table td { padding: 8px 0; border-bottom: 1px solid #eee; }
-        .label { display: inline-block; padding: 1px 5px; border-radius: 3px; font-size: 12px; color: white; margin-right: 5px; }
+        :root { --bg: #f8f7f2; --text: #4a4a4a; --accent: #8e9775; --tag-food: #d4a373; --tag-buy: #6b705c; --tag-alert: #bc6c25; }
+        body { font-family: "PingFang TC", "Microsoft JhengHei", sans-serif; background: var(--bg); color: var(--text); margin: 0; padding-bottom: 80px; }
+        .nav-header { position: sticky; top: 0; background: rgba(248, 247, 242, 0.9); backdrop-filter: blur(5px); z-index: 100; padding: 15px; border-bottom: 1px solid #e0e0e0; text-align: center; }
+        .day-card { background: #fff; margin: 15px; border-radius: 16px; padding: 18px; box-shadow: 0 4px 12px rgba(0,0,0,0.03); }
+        .weather-info { font-size: 13px; color: #888; margin-bottom: 8px; border-bottom: 1px solid #f0f0f0; padding-bottom: 5px; }
+        .section-title { font-size: 18px; font-weight: 600; margin: 10px 0; display: flex; align-items: center; }
+        .section-title::before { content: ""; width: 4px; height: 18px; background: var(--accent); margin-right: 8px; border-radius: 2px; }
+        .item { margin-bottom: 12px; font-size: 15px; }
+        .tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; color: #fff; margin-right: 5px; vertical-align: middle; }
+        .tag-buy { background: var(--tag-buy); } .tag-food { background: var(--tag-food); } .tag-alert { background: var(--tag-alert); }
+        .btn-nav { display: block; text-align: center; background: #fafafa; border: 1px solid #eee; padding: 8px; border-radius: 8px; text-decoration: none; color: #666; font-size: 13px; margin-top: 10px; }
+        .tab-bar { position: fixed; bottom: 0; width: 100%; background: #fff; display: flex; border-top: 1px solid #eee; padding: 10px 0; }
+        .tab-item { flex: 1; text-align: center; font-size: 12px; color: #999; text-decoration: none; }
+        .highlight { color: var(--tag-alert); font-weight: bold; }
+        .alert-box { background: #fff3e0; border: 1px dashed var(--tag-alert); padding: 10px; border-radius: 8px; margin: 15px; font-size: 14px; }
     </style>
 </head>
 <body>
 
-    <div class="tab-bar">
-        <a href="#itinerary" class="tab-btn">📅 行程</a>
-        <a href="#info" class="tab-btn">✈️ 資訊</a>
-        <a href="#budget" class="tab-btn">💰 記帳</a>
-    </div>
+<div class="nav-header">
+    <div style="font-size: 12px; color: var(--accent); letter-spacing: 2px;">FEBRUARY 2026</div>
+    <div style="font-size: 20px; font-weight: 600;">京都神戶 · 靈活行</div>
+</div>
 
-    <h1 id="itinerary">2026 京神之旅</h1>
+<div class="alert-box">
+    <div class="highlight">🚨 出發前必做</div>
+    • 2/14: CX564 預辦登機 + VJW 申請 (截圖 QR) <br>
+    • 2/19: CX565 預辦登機
+</div>
 
-    <div class="day-header">
-        <span>2/15 (日) 京都第一天</span>
-        <span class="weather">☀️ 8°C / 2°C</span>
-    </div>
-    <div class="card">
-        <span class="type-tag tag-trans">交通</span>
-        <h2>抵達與入住</h2>
-        <p>搭乘 <b>HARUKA 特急</b> 直達京都車站</p>
-        <p><span class="label tag-food">必吃</span> <b>便利商店美食清單</b></p>
-        <p><span class="label tag-food">必買</span> <b>齒磨殿堂牙膏</b> (藥妝店)</p>
-        <a href="https://www.google.com/maps/search/Kyoto+Station" class="btn-nav">📍 導航至京都車站</a>
-    </div>
+<div class="day-card" id="day1">
+    <div class="weather-info">📅 2/15 (日) 京都 | ☀️ 8°C / 2°C</div>
+    <div class="section-title">抵達與聚餐</div>
+    <div class="item">✈️ 14:55 抵達 KIX → 16:14 HARUKA 38 號</div>
+    <div class="item"><span class="tag tag-food">必吃美食</span> <b>市場小路 (寺町本店)</b><br> <small>特色：京野菜、鮮魚（非燒肉火鍋）</small></div>
+    <div class="item"><span class="tag tag-buy">必買</span> <b>成城石井超市</b> (京都站八條口)</div>
+    <a href="https://www.google.com/maps/search/?api=1&query=市場小路+寺町本店" class="btn-nav">📍 導航至餐廳</a>
+</div>
 
-    <div class="day-header">
-        <span>2/16 (一) 古城與好物</span>
-        <span class="weather">☀️ 9°C / 3°C</span>
-    </div>
-    <div class="card">
-        <span class="type-tag tag-spot">景點</span>
-        <h2>下鴨神社與鴨川</h2>
-        <p>💡 攻略：前往 <b>河合神社</b> 祈求美貌。</p>
-        <p><span class="label tag-food">必吃</span> <b>出町ふたば 豆餅</b> (排隊名店)</p>
-        <p><span class="label tag-food">必買</span> <b>3COINS 生活小物</b> (擠壓器)</p>
-        <a href="https://www.google.com/maps/search/Shimogamo+Jinja" class="btn-nav">📍 導航至下鴨神社</a>
-    </div>
+<div class="day-card" id="day2">
+    <div class="weather-info">📅 2/16 (一) 京都 | ☁️ 9°C / 3°C</div>
+    <div class="section-title">伏見稻荷 & 一站式採買</div>
+    <div class="item">⛩️ 10:00 伏見稻荷大社 (拍攝千本鳥居)</div>
+    <div class="item">🛒 13:00 AEON Mall Kyoto (京都站後站)</div>
+    <div class="item"><span class="tag tag-buy">必買清單</span> <b>UNIQLO 燈芯絨外套 (¥1,990)</b>、GU、無印良品</div>
+    <div class="item"><span class="tag tag-food">推薦餐廳</span> <b>東洋亭</b><br> <small>必點：百年漢堡排、整顆番茄沙拉</small></div>
+    <a href="https://www.google.com/maps/search/?api=1&query=AEON+Mall+Kyoto" class="btn-nav">📍 導航至 AEON Mall</a>
+</div>
 
-    <div class="day-header">
-        <span>2/17 (二) 質感穿搭巡禮</span>
-        <span class="weather">☁️ 10°C / 4°C</span>
-    </div>
-    <div class="card">
-        <span class="type-tag tag-spot">景點</span>
-        <h2>二条城 & 四条河原町</h2>
-        <p><span class="label tag-food">必買</span> <b>UNIQLO 燈芯絨短外套</b></p>
-        <p><span class="label tag-food">必買</span> <b>GU 雙面織紋夾克</b></p>
-        <a href="https://www.google.com/maps/search/Nijo+Castle" class="btn-nav">📍 導航至二条城</a>
-    </div>
+<div class="day-card" id="day3">
+    <div class="weather-info">📅 2/17 (二) 京都 | ☀️ 10°C / 4°C</div>
+    <div class="section-title">鴨川與美妝巡禮</div>
+    <div class="item">🌊 鴨川三角洲散策 (出町柳附近)</div>
+    <div class="item">💄 四條河原町：松本清、大國藥妝</div>
+    <div class="item"><span class="tag tag-buy">必買</span> <b>齒磨殿堂牙膏</b>、<b>3COINS 日用品</b></div>
+    <div class="item"><span class="tag tag-food">推薦餐廳</span> <b>名代豬排</b> 或 <b>進進堂</b> (麵包套餐)</div>
+    <a href="https://www.google.com/maps/search/?api=1&query=四條河原町" class="btn-nav">📍 導航至四條商圈</a>
+</div>
 
-    <div class="day-header">
-        <span>2/18 (三) 跨越神戶</span>
-        <span class="weather">☀️ 11°C / 5°C</span>
-    </div>
-    <div class="card">
-        <span class="type-tag tag-spot">景點</span>
-        <h2>神戶港與美利堅公園</h2>
-        <p>💡 故事：神戶塔是神戶的地標，夜景非常迷人。</p>
-        <p>下午前往飯店 check-in。</p>
-        <a href="https://www.google.com/maps/search/Kobe+Port+Tower" class="btn-nav">📍 導航至神戶港</a>
-    </div>
+<div class="day-card" id="day4">
+    <div class="weather-info">📅 2/18 (三) 神戶 | ☀️ 11°C / 5°C</div>
+    <div class="section-title">移師神戶 & 中心街購物</div>
+    <div class="item">🚃 JR 新快速：京都 → 神戶三之宮 (50分)</div>
+    <div class="item">🏨 住宿：蒙特埃瑪納酒店 (生田神社旁)</div>
+    <div class="item"><span class="tag tag-food">必吃美食</span> <b>Red Rock</b> (烤牛肉蓋飯)</div>
+    <div class="item"><span class="tag tag-buy">必買</span> <b>唐吉訶德三宮店</b> (sanki 擠壓器)</div>
+    <a href="https://www.google.com/maps/search/?api=1&query=Hotel+Monte+Hermana+Kobe+Amalie" class="btn-nav">📍 導航至飯店</a>
+</div>
 
-    <div class="day-header">
-        <span>2/19 (四) 有馬溫泉之約</span>
-        <span class="weather">☀️ 12°C / 6°C</span>
-    </div>
-    <div class="card">
-        <span class="type-tag tag-spot">景點</span>
-        <h2>有馬溫泉巡禮</h2>
-        <p><span class="label tag-food">必吃</span> <b>碳酸煎餅</b>、<b>金之湯/銀之湯</b></p>
-        <p>💡 攻略：日本最古老溫泉之一，記得預約泡湯。</p>
-        <a href="https://www.google.com/maps/search/Arima+Onsen" class="btn-nav">📍 導航至有馬溫泉</a>
-    </div>
+<div class="day-card" id="day5">
+    <div class="weather-info">📅 2/19 (四) 神戶 | ☀️ 12°C / 6°C</div>
+    <div class="section-title">溫泉或海港夜景</div>
+    <div class="item">♨️ 有馬溫泉 (金之湯/銀之湯)</div>
+    <div class="item">🎡 神戶港 MOSAIC 廣場 (夜景影片拍攝)</div>
+    <div class="item"><span class="tag tag-food">推薦餐廳</span> <b>Eggs 'n Things</b> (絕景鬆餅)</div>
+    <a href="https://www.google.com/maps/search/?api=1&query=神戶港MOSAIC" class="btn-nav">📍 導航至神戶港</a>
+</div>
 
-    <div class="day-header">
-        <span>2/20 (五) 賦歸</span>
-        <span class="weather">☁️ 11°C / 5°C</span>
-    </div>
-    <div class="card">
-        <span class="type-tag tag-trans">交通</span>
-        <h2>返回關西機場</h2>
-        <p>整理行李，帶著滿滿回憶回家。</p>
-        <a href="https://www.google.com/maps/search/Kansai+Airport" class="btn-nav">📍 導航至關西機場</a>
-    </div>
+<div class="day-card" id="day6">
+    <div class="weather-info">📅 2/20 (五) 歸國 | ☁️ 11°C / 5°C</div>
+    <div class="section-title">最後掃貨與機場</div>
+    <div class="item">🚌 12:15 三宮站搭乘 機場巴士 (A1線)</div>
+    <div class="item">✈️ 16:20 CX565 起飛</div>
+    <div class="item"><span class="tag tag-alert">攻略</span> 建議提前抵達，機場免稅店最後補貨。</div>
+    <a href="https://www.google.com/maps/search/?api=1&query=三之宮站+機場巴士" class="btn-nav">📍 導航至巴士站</a>
+</div>
 
-    <hr>
+<div class="day-card">
+    <div class="section-title">✈️ 航班 & 住宿</div>
+    <div class="item"><b>去程:</b> CX564 (2/15 11:00)</div>
+    <div class="item"><b>回程:</b> CX565 (2/20 16:20)</div>
+    <div class="item"><b>飯店1:</b> 京都八條口附近飯店</div>
+    <div class="item"><b>飯店2:</b> 蒙特埃瑪納酒店 (神戶)</div>
+</div>
 
-    <h2 id="info">✈️ 重要資訊</h2>
-    <div class="info-box">
-        <p>📌 <b>緊急電話：</b> 110 (警察) / 119 (救護)</p>
-        <p>📌 <b>住宿代號：</b> <span class="highlight">#KYOTO-2026-001</span></p>
-        <p>📌 <b>航班：</b> TPE-KIX (2/15) / KIX-TPE (2/20)</p>
-    </div>
-
-    <h2 id="budget">💰 預算表</h2>
-    <div class="card">
-        <table class="budget-table">
-            <tr><td>Day 1 交通美食</td><td>¥ 3,700</td></tr>
-            <tr><td>Day 2 交通購物</td><td>¥ 4,750</td></tr>
-            <tr><td>Day 3 衣服採購</td><td>¥ 12,000</td></tr>
-            <tr><td>Day 5 溫泉行程</td><td>¥ 5,500</td></tr>
-            <tr><td><b>總計估算</b></td><td><b>¥ 25,950</b></td></tr>
-        </table>
-    </div>
+<div class="tab-bar">
+    <a href="#" class="tab-item">🏠 首頁</a>
+    <a href="https://www.google.com/maps" class="tab-item">🗺️ 地圖</a>
+    <a href="#day1" class="tab-item">📅 行程</a>
+</div>
 
 </body>
 </html>
