@@ -10,7 +10,7 @@
         
         /* Tab Navigation */
         .tabs { position: fixed; top: 0; width: 100%; background: #fff; display: flex; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-        .tab-btn { flex: 1; padding: 15px; text-align: center; font-size: 14px; font-weight: bold; cursor: pointer; border-bottom: 2px solid transparent; }
+        .tab-btn { flex: 1; padding: 15px; text-align: center; font-size: 14px; font-weight: bold; cursor: pointer; border-bottom: 2px solid transparent; color: #999; }
         .tab-btn.active { border-bottom: 2px solid var(--accent); color: var(--accent); }
         .tab-content { display: none; padding: 15px; }
         .tab-content.active { display: block; }
@@ -22,10 +22,7 @@
         .card-body { padding: 15px; display: none; }
         .card.open .card-body { display: block; }
         
-        /* Location & Time */
-        .loc-info { font-size: 12px; color: #888; margin-top: 5px; background: #f0f3f0; padding: 5px 10px; border-radius: 5px; display: inline-block; }
-
-        /* Inner Sections (Food/Buy/Extra Collapsible) */
+        /* Inner Sections (Collapsible) */
         .sub-collapse { border: 1px solid #eee; border-radius: 8px; margin-top: 10px; }
         .sub-header { padding: 10px; font-size: 14px; background: #fafafa; cursor: pointer; display: flex; justify-content: space-between; }
         .sub-body { padding: 10px; display: none; border-top: 1px solid #eee; }
@@ -37,10 +34,9 @@
         .tag-food { background: var(--food); }
         .tag-buy { background: var(--buy); }
         .tag-spot { background: var(--accent); }
-        .btn-nav { display: inline-block; padding: 6px 14px; font-size: 12px; color: var(--accent); border: 1px solid var(--accent); border-radius: 20px; text-decoration: none; margin-top: 8px; font-weight: 500; }
-        .btn-link { display: block; text-align: center; background: var(--alert); color: white; padding: 10px; border-radius: 8px; text-decoration: none; margin: 10px 0; font-size: 14px; }
+        .btn-nav { display: inline-block; padding: 8px 16px; font-size: 13px; color: var(--accent); border: 1px solid var(--accent); border-radius: 20px; text-decoration: none; margin-top: 8px; font-weight: 500; }
+        .btn-link { display: block; text-align: center; background: var(--alert); color: white; padding: 12px; border-radius: 8px; text-decoration: none; margin: 10px 0; font-size: 14px; font-weight: bold; }
         .trans-text { font-size: 12px; color: #777; margin-bottom: 8px; display: block; line-height: 1.5; }
-        
         .weather { font-size: 12px; color: #5a9; font-weight: normal; }
         .highlight { font-weight: bold; color: var(--alert); }
         ul { padding-left: 18px; margin: 5px 0; font-size: 13px; color: #666; }
@@ -71,18 +67,18 @@
                             <li>HARUKA 38 號：16:14 發車 → 17:34 抵達</li>
                             <li>HARUKA 42 號：16:44 發車 → 18:04 抵達</li>
                         </ul>
+                        <p><small>車程約 80 分鐘，每 30 分鐘一班。</small></p>
                     </div>
                 </div>
 
                 <p>🏨 <b>入住：京都八条口大和ROYNET飯店</b></p>
-                <div class="loc-info">📍 步行約 4 分鐘 (京都站八条口出)</div><br>
                 <a href="https://www.google.com/maps/search/?api=1&query=Daiwa+Roynet+Hotel+Kyoto+Hachijoguchi" class="btn-nav">導航至飯店</a>
 
                 <div class="sub-collapse">
                     <div class="sub-header" onclick="toggleSub(event, this.parentElement)">🍴 建議美食 (京都車站湯麵) <span>+</span></div>
                     <div class="sub-body">
-                        <p><b>本家 第一旭</b> 或 <b>新福菜館</b></p>
-                        <a href="https://www.google.com/maps/search/?api=1&query=Honke+Daiichi-Asahi+Kyoto" class="btn-nav">導航至第一旭</a>
+                        <p>推薦：<b>本家 第一旭</b> 或 <b>新福菜館</b></p>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Honke+Daiichi-Asahi+Kyoto+Station" class="btn-nav">導航至拉麵店</a>
                     </div>
                 </div>
                 <p>🌙 <b>晚上：與佳錡見面吃消夜</b></p>
@@ -96,15 +92,15 @@
             </div>
             <div class="card-body">
                 <span class="trans-text"><span class="tag tag-trans">交通</span> JR 奈良線 (京都站 ↔ 稻荷站)</span>
-                <p>⛩️ <b>10:00 伏見稻荷大社</b></p>
+                <p>⛩️ <b>10:00 伏見稻荷大社</b> (千本鳥居走走)</p>
                 <a href="https://www.google.com/maps/search/?api=1&query=Fushimi+Inari+Taisha" class="btn-nav">導航至大社</a>
 
                 <div class="sub-collapse">
-                    <div class="sub-header" onclick="toggleSub(event, this.parentElement)">🛒 採購與美食 (AEON Mall) <span>+</span></div>
+                    <div class="sub-header" onclick="toggleSub(event, this.parentElement)">🛒 採購與美食 (AEON Mall Kyoto) <span>+</span></div>
                     <div class="sub-body">
-                        <p>UNIQLO、GU、MUJI、大創</p>
-                        <p>🍴 <b>美食建議：</b>東洋亭 (漢堡排) 或 4F 湯麵</p>
-                        <a href="https://www.google.com/maps/search/?api=1&query=AEON+MALL+KYOTO" class="btn-nav">導航至 AEON</a>
+                        <p><b>採買：</b>UNIQLO、GU、MUJI、大創</p>
+                        <p><b>美食：</b>東洋亭 (漢堡排) 或 4F 湯麵/簡餐</p>
+                        <a href="https://www.google.com/maps/search/?api=1&query=AEON+Mall+Kyoto" class="btn-nav">導航至 AEON</a>
                     </div>
                 </div>
             </div>
@@ -116,14 +112,16 @@
                 <span>▼</span>
             </div>
             <div class="card-body">
+                <span class="trans-text"><span class="tag tag-trans">交通</span> 京都市巴士 或 步行</span>
                 <p>🌊 <b>10:00 鴨川與四條散步</b></p>
                 <div class="sub-collapse">
-                    <div class="sub-header" onclick="toggleSub(event, this.parentElement)">🛒 購物建議路線 <span>+</span></div>
+                    <div class="sub-header" onclick="toggleSub(event, this.parentElement)">🛒 購物與在地美食 <span>+</span></div>
                     <div class="sub-body">
                         <p>1. <b>LoFt 京都店</b></p>
-                        <a href="https://www.google.com/maps/search/?api=1&query=Kyoto+Loft" class="btn-nav">導航至 LoFt</a>
+                        <a href="https://www.google.com/maps/search/?api=1&query=LoFt+Kyoto" class="btn-nav">導航至 LoFt</a>
                         <p>2. <b>3COINS 河原町店</b></p>
                         <a href="https://www.google.com/maps/search/?api=1&query=3COINS+Kyoto+Kawaramachi" class="btn-nav">導航至 3COINS</a>
+                        <p>🍴 <b>美食：</b>名代豬排 或 進進堂</p>
                     </div>
                 </div>
             </div>
@@ -139,9 +137,9 @@
                 <p>🏨 <b>11:30 蒙特埃瑪納酒店寄放行李</b></p>
                 <a href="https://www.google.com/maps/search/?api=1&query=Hotel+Monte+Hermana+Kobe+Amalie" class="btn-nav">導航至飯店</a>
                 <div class="sub-collapse">
-                    <div class="sub-header" onclick="toggleSub(event, this.parentElement)">🍴 周邊美食 <span>+</span></div>
+                    <div class="sub-header" onclick="toggleSub(event, this.parentElement)">🍴 周邊美食建議 <span>+</span></div>
                     <div class="sub-body">
-                        <p>Red Rock (烤牛肉蓋飯) 或 Isuzu Bakery</p>
+                        <p>Red Rock (烤牛肉蓋飯) 或 Isuzu Bakery 麵包店</p>
                     </div>
                 </div>
             </div>
@@ -156,12 +154,15 @@
                 <div class="sub-collapse">
                     <div class="sub-header" onclick="toggleSub(event, this.parentElement)">🏛️ 建議景點與商場 <span>+</span></div>
                     <div class="sub-body">
-                        <p><b>1. Umie Mall / 麵包超人博物館</b></p>
-                        <a href="https://www.google.com/maps/search/?api=1&query=Kobe+Harborland+umie" class="btn-nav">導航至 Umie</a>
-                        <p><b>2. 神戶動物王國</b></p>
-                        <a href="https://www.google.com/maps/search/?api=1&query=Kobe+Animal+Kingdom" class="btn-nav">導航至動物王國</a>
+                        <p><span class="tag tag-spot">景點</span> <b>神戶海洋博物館 / 麵包超人</b></p>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Kobe+Maritime+Museum" class="btn-nav">導航海洋館</a>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Umie+Mosaic+Mall" class="btn-nav">導航 Umie</a>
+                        <hr style="border:0; border-top:1px solid #eee; margin:10px 0;">
+                        <p><span class="tag tag-spot">景點</span> <b>神戶動物王國</b></p>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Kobe+Animal+Kingdom" class="btn-nav">導航動物王國</a>
                     </div>
                 </div>
+                <p class="highlight">🚨 今日記得辦理 CX565 預辦登機 (見第二頁)</p>
             </div>
         </div>
 
@@ -171,39 +172,46 @@
                 <span>▼</span>
             </div>
             <div class="card-body">
-                <span class="trans-text"><span class="tag tag-trans">交通</span> 建議搭乘 12:50 前後 <b>JR 特急 Haruka</b></span>
+                <span class="trans-text"><span class="tag tag-trans">交通</span> 建議 12:50 前往三之宮站搭 JR 電車至 KIX</span>
+                <p>🥐 <b>早餐：</b>西村咖啡店 (三宮店) 或 Komeda Coffee</p>
                 <p>✈️ <b>16:20 航班 CX565 起飛</b></p>
-                <a href="https://www.google.com/maps/dir/?api=1&destination=Kansai+International+Airport" class="btn-nav">查詢至機場路線</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=Kansai+International+Airport" class="btn-nav">導航至關西機場</a>
             </div>
         </div>
     </div>
 
     <div id="info" class="tab-content">
+        
         <div class="card" style="border: 1px dashed var(--alert);">
             <div class="card-header" onclick="toggleCard(this.parentElement)">
-                <div class="card-title highlight">🚨 2/14 (六) 出發前必辦</div>
+                <div class="card-title highlight">🚨 出發前必辦事項</div>
                 <span>▼</span>
             </div>
             <div class="card-body">
-                <p>1. 國泰航空 網上預辦登機</p>
-                <a href="https://www.cathaypacific.com/mb/#!/zh_TW/olci/login" class="btn-link">前往國泰登機</a>
-                <p>2. 申請 Visit Japan Web</p>
+                <p><b>1. 國泰航空網上預辦登機 (24H 前)</b></p>
+                <a href="https://www.cathaypacific.com/mb/#!/zh_TW/olci/login" class="btn-link">前往登機 (2/14 & 2/19)</a>
+                <p><b>2. 申請 Visit Japan Web (VJW)</b></p>
                 <a href="https://www.vjw.digital.go.jp/main/#/vjwplo001" class="btn-link" style="background: #1a73e8;">前往 VJW 申請</a>
+                <p><small>*請截圖 QR Code 備用</small></p>
             </div>
         </div>
 
         <div class="card">
-            <div class="card-header"><div class="card-title">🏨 住宿：京都 (2/15-2/17)</div></div>
+            <div class="card-header"><div class="card-title">🎫 航班資訊</div></div>
             <div class="card-body" style="display:block">
-                <p><b>京都八条口大和ROYNET飯店</b></p>
+                <p><b>去程 (2/15):</b> CX564 (11:00 TPE → 14:55 KIX)</p>
+                <hr style="border:0; border-top:1px solid #eee;">
+                <p><b>回程 (2/20):</b> CX565 (16:20 KIX → 18:15 TPE)</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header"><div class="card-title">🏨 住宿資訊</div></div>
+            <div class="card-body" style="display:block">
+                <p><b>京都 (2/15-2/18):</b><br>京都八条口大和ROYNET飯店</p>
                 <a href="https://www.google.com/maps/search/?api=1&query=Daiwa+Roynet+Hotel+Kyoto+Hachijoguchi" class="btn-nav">飯店地圖</a>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-header"><div class="card-title">🏨 住宿：神戶 (2/18-2/20)</div></div>
-            <div class="card-body" style="display:block">
-                <p><b>蒙特埃瑪納酒店</b></p>
+                <hr style="border:0; border-top:1px solid #eee; margin:15px 0;">
+                <p><b>神戶 (2/18-2/20):</b><br>蒙特埃瑪納酒店 (Hotel Monte Hermana)</p>
                 <a href="https://www.google.com/maps/search/?api=1&query=Hotel+Monte+Hermana+Kobe+Amalie" class="btn-nav">飯店地圖</a>
             </div>
         </div>
